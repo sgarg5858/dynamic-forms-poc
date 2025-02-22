@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/infrastructure/interfaces",
+  "sourceRoot": "libs/infrastructure/interfaces/src",
+  "prefix": "dynamic-forms-poc",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/infrastructure/interfaces"],
+      "options": {
+        "jestConfig": "libs/infrastructure/interfaces/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/infrastructure/interfaces/src/**/*.ts",
+          "libs/infrastructure/interfaces/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

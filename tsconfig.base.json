@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@dynamic-forms-poc/infrastructure/interfaces": [
+        "libs/infrastructure/interfaces/src/index.ts"
+      ],
+      "@dynamic-forms-poc/personal-details": [
+        "libs/personal-details/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

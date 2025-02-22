@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "infrastructure-interfaces": "libs/infrastructure/interfaces",
+    "personal-details": "libs/personal-details",
     "shell": "apps/shell",
     "shell-e2e": "apps/shell-e2e"
   }

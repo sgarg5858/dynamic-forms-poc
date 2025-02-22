@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/personal-details",
+  "sourceRoot": "libs/personal-details/src",
+  "prefix": "dynamic-forms-poc",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/personal-details"],
+      "options": {
+        "project": "libs/personal-details/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/personal-details/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/personal-details/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/personal-details"],
+      "options": {
+        "jestConfig": "libs/personal-details/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/personal-details/src/**/*.ts",
+          "libs/personal-details/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
