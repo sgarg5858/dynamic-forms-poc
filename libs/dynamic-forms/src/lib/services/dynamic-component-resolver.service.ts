@@ -3,6 +3,7 @@ import { DynamicInputComponent } from '../components/dynamic-input/dynamic-input
 import { DynamicSelectComponent } from '../components/dynamic-select/dynamic-select.component';
 import { DynamicCheckboxComponent } from '../components/dynamic-checkbox/dynamic-checkbox.component';
 import { DynamicControl } from '@dynamic-forms-poc/infrastructure/interfaces';
+import { DynamicGroupComponent } from '../components/dynamic-group/dynamic-group.component';
 type DynamicControlMap = {
   [key in DynamicControl['controlType']]: Type<unknown>;
 };
@@ -15,6 +16,7 @@ export class DynamicComponentResolver {
     input: DynamicInputComponent,
     select: DynamicSelectComponent,
     checkbox: DynamicCheckboxComponent,
+    'group': DynamicGroupComponent
   };
 
   resolve(controlType: DynamicControl['controlType']):Type<unknown> {

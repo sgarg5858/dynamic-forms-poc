@@ -1,4 +1,4 @@
-<div [formGroup]="form">
+<ng-container [formGroup]="form">
   <div class="form-field">
     <label [for]="controlConfig.name">{{ controlConfig.label }}</label>
     <select [formControlName]="controlConfig.name">
@@ -10,4 +10,4 @@
       </option>
     </select>
   </div>
-</div>
+</ng-container>

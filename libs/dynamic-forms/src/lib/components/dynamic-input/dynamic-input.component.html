@@ -1,5 +1,5 @@
 <!-- //This adding formGroup to every control is not a good approach  -->
-<div [formGroup]="form">
+<ng-container [formGroup]="form">
   <div class="form-field">
     <label [for]="controlConfig.name">{{ controlConfig.label }}</label>
     <input
@@ -8,4 +8,4 @@
       [formControlName]="controlConfig.name"
     />
   </div>
-</div>
+</ng-container>
