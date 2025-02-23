@@ -30,6 +30,9 @@
     flex-direction: column;
     &--checkbox{
         flex-direction: row;
+        input{
+          margin-right: 10px;
+        }
     }
   }
   input:not([type='checkbox']),select{

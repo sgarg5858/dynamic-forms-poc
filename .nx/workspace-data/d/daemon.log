@@ -1,0 +1,12 @@
+[NX Daemon Server] - 2025-02-23T15:15:37.407Z - Started listening on: /var/folders/tb/6d461c99389fdtgmmlcyy3zc0000gn/T/5ba13d92879686803a4d/d.sock
+[NX Daemon Server] - 2025-02-23T15:15:37.409Z - [WATCHER]: Subscribed to changes within: /Users/sanjay/frontend/frontend-poc/dynamic-forms-poc (native)
+[NX Daemon Server] - 2025-02-23T15:15:37.414Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-23T15:15:37.415Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2025-02-23T15:15:37.416Z - [REQUEST]: Responding to the client. Shutdown initiated
+[NX Daemon Server] - 2025-02-23T15:15:37.416Z - Done responding to the client Shutdown initiated
+[NX Daemon Server] - 2025-02-23T15:15:37.416Z - Handled FORCE_SHUTDOWN. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2025-02-23T15:15:37.417Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2025-02-23T15:15:37.417Z - [WATCHER]: Stopping the watcher for /Users/sanjay/frontend/frontend-poc/dynamic-forms-poc (sources)
+[NX Daemon Server] - 2025-02-23T15:15:37.417Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2025-02-23T15:15:37.417Z - [WATCHER]: Stopping the watcher for /Users/sanjay/frontend/frontend-poc/dynamic-forms-poc (outputs)
+[NX Daemon Server] - 2025-02-23T15:15:37.417Z - Server stopped because: "Request to shutdown"
