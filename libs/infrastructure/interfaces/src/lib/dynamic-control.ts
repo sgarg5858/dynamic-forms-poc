@@ -9,7 +9,7 @@ export interface DynamicControl<T = string | boolean | number > {
   name: string;
   label: string;
   defaultValue: T | null;
-  controlType: 'input' | 'select' | 'checkbox';
+  controlType: 'input' | 'select' | 'checkbox' | 'group';
   type?: string;
   options?: DynamicOption<T>[];
   validators?: ValidatorFn[];

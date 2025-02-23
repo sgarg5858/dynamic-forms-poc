@@ -5,6 +5,7 @@ import { DynamicSelectComponent } from './components/dynamic-select/dynamic-sele
 import { DynamicCheckboxComponent } from './components/dynamic-checkbox/dynamic-checkbox.component';
 import { ControlConfigInjectorPipe } from './pipes/control-config-injector.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DynamicGroupComponent } from './components/dynamic-group/dynamic-group.component';
 
 @NgModule({
   imports: [CommonModule,ReactiveFormsModule],
@@ -12,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DynamicInputComponent,
     DynamicSelectComponent,
     DynamicCheckboxComponent,
+    DynamicGroupComponent,
     ControlConfigInjectorPipe,
   ],
   exports:[ControlConfigInjectorPipe]
