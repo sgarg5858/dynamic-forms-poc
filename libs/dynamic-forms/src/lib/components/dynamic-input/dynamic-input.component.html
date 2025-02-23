@@ -1,11 +1,9 @@
 <!-- //This adding formGroup to every control is not a good approach  -->
-<ng-container [formGroup]="form">
-  <div class="form-field">
-    <label [for]="controlConfig.name">{{ controlConfig.label }}</label>
-    <input
-      [id]="controlConfig.name"
-      [type]="controlConfig.type"
-      [formControlName]="controlConfig.name"
-    />
-  </div>
-</ng-container>
+<div class="form-field">
+  <label [for]="controlConfig.name">{{ controlConfig.label }}</label>
+  <input
+    [id]="controlConfig.name"
+    [type]="controlConfig.type"
+    [formControlName]="controlConfig.name"
+  />
+</div>
