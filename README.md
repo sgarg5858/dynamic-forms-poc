@@ -16,6 +16,13 @@
 4. But for now we will focus on introducing formGroup support to our dynamicForm Implementation.
 
 
+# 3. Bits about [3-dynamic-forms-with-form-group-support ](https://github.com/sgarg5858/dynamic-forms-poc/tree/3-dynamic-forms-with-form-group-support)
+
+1. FormGroup works fine now in our dynamic approach.
+2. But we have to use formGroup wrapper in every dynamic component, which i would like to remove and use more better approach.
+3. We will use viewProviders to resolve parent formGroup/formGroupName , as formControlName  resolves the provider for ControlContainer using @Host, so it should find a provider in the same view, providers will not work, as @Host decorator.
+
+
 
 
 # DynamicFormsPoc
