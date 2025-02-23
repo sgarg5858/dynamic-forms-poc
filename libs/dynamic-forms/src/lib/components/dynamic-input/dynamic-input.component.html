@@ -1,1 +1,11 @@
-<p>dynamic-input works!</p>
+<!-- //This adding formGroup to every control is not a good approach  -->
+<div [formGroup]="form">
+  <div class="form-field">
+    <label [for]="controlConfig.name">{{ controlConfig.label }}</label>
+    <input
+      [id]="controlConfig.name"
+      [type]="controlConfig.type"
+      [formControlName]="controlConfig.name"
+    />
+  </div>
+</div>

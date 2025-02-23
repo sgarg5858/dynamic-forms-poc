@@ -10,51 +10,10 @@
             [ngComponentOutlet]="
               dynamicComponentResolver.resolve(control.value.controlType)
             "
+            [ngComponentOutletInjector]="control.value | controlConfigInjector"
           >
           </ng-container>
-        </ng-container>
-
-        <!-- <ng-container *ngFor="let control of formConfig | keyvalue">
-          <ng-container [ngSwitch]="control.value.controlType">
-            <div class="form-field" *ngSwitchCase="'input'">
-              <label [for]="control.value.name">{{
-                control.value.label
-              }}</label>
-              <input
-                [id]="control.value.name"
-                [type]="control.value.type"
-                [formControlName]="control.value.name"
-              />
-            </div>
-
-            <div class="form-field" *ngSwitchCase="'select'">
-              <label [for]="control.value.name">{{
-                control.value.label
-              }}</label>
-              <select [formControlName]="control.value.name">
-                <option
-                  *ngFor="let option of control.value.options"
-                  [value]="option.value"
-                >
-                  {{ option.label }}
-                </option>
-              </select>
-            </div>
-
-            <div
-              class="form-field form-field--checkbox"
-              *ngSwitchCase="'checkbox'"
-            >
-              <input
-                type="checkbox"
-                [id]="control.value.name"
-                [formControlName]="control.value.name"
-              />
-              <label [for]="control.value.name">{{
-                control.value.label
-              }}</label>
-            </div>
-          </ng-container>
+          <!-- Error message looks bad right now :( -->
           <ng-container
             *ngIf="
               form.get(control.value.name)?.touched &&
@@ -71,7 +30,7 @@
           >
             <p class="input-error">{{ control.value.label }} should be valid</p>
           </ng-container>
-        </ng-container> -->
+        </ng-container>
         <button type="submit" [disabled]="!form.valid">Submit</button>
       </form>
     </div>
