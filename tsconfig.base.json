@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@dynamic-forms-poc/dynamic-forms": ["libs/dynamic-forms/src/index.ts"],
       "@dynamic-forms-poc/infrastructure/interfaces": [
         "libs/infrastructure/interfaces/src/index.ts"
       ],
+      "@dynamic-forms-poc/input-errors": ["libs/input-errors/src/index.ts"],
       "@dynamic-forms-poc/personal-details": [
         "libs/personal-details/src/index.ts"
       ]
