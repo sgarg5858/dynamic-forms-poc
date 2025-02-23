@@ -1,7 +1,9 @@
 {
   "version": 2,
   "projects": {
+    "dynamic-forms": "libs/dynamic-forms",
     "infrastructure-interfaces": "libs/infrastructure/interfaces",
+    "input-errors": "libs/input-errors",
     "personal-details": "libs/personal-details",
     "shell": "apps/shell",
     "shell-e2e": "apps/shell-e2e"

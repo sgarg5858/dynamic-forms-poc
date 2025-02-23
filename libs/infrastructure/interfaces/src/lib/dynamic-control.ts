@@ -1,16 +1,16 @@
 import { ValidatorFn } from '@angular/forms';
 
 export interface DynamicOption<T = string > {
-  value: T;
   label: string;
+  value: T;
 }
 
-export interface DynamicControl<T = string | boolean | number> {
+export interface DynamicControl<T = string | boolean | number > {
   name: string;
+  label: string;
+  defaultValue: T | null;
   controlType: 'input' | 'select' | 'checkbox';
   type?: string;
-  defaultValue: T | null;
-  label: string;
   options?: DynamicOption<T>[];
   validators?: ValidatorFn[];
 }

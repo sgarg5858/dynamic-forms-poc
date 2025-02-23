@@ -6,7 +6,6 @@
     <div class="card-body">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <ng-container *ngFor="let control of formConfig | keyvalue">
-
           <ng-container [ngSwitch]="control.value.controlType">
             <div class="form-field" *ngSwitchCase="'input'">
               <label [for]="control.value.name">{{
@@ -42,8 +41,26 @@
                 [id]="control.value.name"
                 [formControlName]="control.value.name"
               />
-              <label [for]="control.value.name">{{ control.value.label }}</label>
+              <label [for]="control.value.name">{{
+                control.value.label
+              }}</label>
             </div>
+          </ng-container>
+          <ng-container
+            *ngIf="
+              form.get(control.value.name)?.touched &&
+              form.get(control.value.name)?.hasError('required')
+            "
+          >
+            <p class="input-error" >{{ control.value.label }} is required</p>
+          </ng-container>
+          <ng-container
+            *ngIf="
+              form.get(control.value.name)?.touched &&
+              form.get(control.value.name)?.hasError('email')
+            "
+          >
+            <p class="input-error">{{ control.value.label }} should be valid</p>
           </ng-container>
         </ng-container>
         <button type="submit" [disabled]="!form.valid">Submit</button>
