@@ -1,5 +1,5 @@
 #
-1. Problems with https://github.com/sgarg5858/dynamic-forms-poc/tree/1-basic-dynamic-form-approach
+ # 1. Problems with https://github.com/sgarg5858/dynamic-forms-poc/tree/1-basic-dynamic-form-approach
 
 1. We have the config and its type.
 2. But we have to create the formGroup and register control everytime, which we can move the logic to formService.
@@ -7,7 +7,7 @@
 4. In future we might have 20 type of controls, we can’t put all 20 switch blocks, we will be violating Single Responsibility Principle and Open/Closed Principle.
 5. My Idea is to extract each control into its own separate component and create those components dynamically using ngComponentOutlet.
 
-2. Bits about this: https://github.com/sgarg5858/dynamic-forms-poc/tree/2-dynamic-forms-without-nested-group-array-support
+# 2. Bits about this: https://github.com/sgarg5858/dynamic-forms-poc/tree/2-dynamic-forms-without-nested-group-array-support
 
 1. We have solved one problem by moving dynamic controls to their dedicated components, and resolving those compnonents via resolverService which helps in
    introducing new controls with ease, also less repititive work.
