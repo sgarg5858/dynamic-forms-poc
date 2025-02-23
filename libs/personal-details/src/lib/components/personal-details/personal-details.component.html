@@ -6,6 +6,15 @@
     <div class="card-body">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <ng-container *ngFor="let control of formConfig | keyvalue">
+          <ng-container
+            [ngComponentOutlet]="
+              dynamicComponentResolver.resolve(control.value.controlType)
+            "
+          >
+          </ng-container>
+        </ng-container>
+
+        <!-- <ng-container *ngFor="let control of formConfig | keyvalue">
           <ng-container [ngSwitch]="control.value.controlType">
             <div class="form-field" *ngSwitchCase="'input'">
               <label [for]="control.value.name">{{
@@ -52,7 +61,7 @@
               form.get(control.value.name)?.hasError('required')
             "
           >
-            <p class="input-error" >{{ control.value.label }} is required</p>
+            <p class="input-error">{{ control.value.label }} is required</p>
           </ng-container>
           <ng-container
             *ngIf="
@@ -62,7 +71,7 @@
           >
             <p class="input-error">{{ control.value.label }} should be valid</p>
           </ng-container>
-        </ng-container>
+        </ng-container> -->
         <button type="submit" [disabled]="!form.valid">Submit</button>
       </form>
     </div>

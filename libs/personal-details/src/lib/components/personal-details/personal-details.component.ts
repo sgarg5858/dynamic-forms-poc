@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { PersonalDetailsFormConfig } from './personal-details.config';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import {DynamicComponentResolver} from '@dynamic-forms-poc/dynamic-forms'
 @Component({
   selector: 'dynamic-forms-poc-personal-details',
   templateUrl: './personal-details.component.html',
@@ -11,6 +11,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class PersonalDetailsComponent implements OnInit {
   formConfig = PersonalDetailsFormConfig();
   form!: FormGroup;
+
+  constructor(public dynamicComponentResolver:DynamicComponentResolver){}
 
   ngOnInit(): void {
     this.createForm();
