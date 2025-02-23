@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/input-errors",
+  "sourceRoot": "libs/input-errors/src",
+  "prefix": "dynamic-forms-poc",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/input-errors"],
+      "options": {
+        "project": "libs/input-errors/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/input-errors/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/input-errors/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/input-errors"],
+      "options": {
+        "jestConfig": "libs/input-errors/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/input-errors/src/**/*.ts",
+          "libs/input-errors/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
