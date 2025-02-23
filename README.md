@@ -1,8 +1,8 @@
 #
 Problems with https://github.com/sgarg5858/dynamic-forms-poc/tree/1-basic-dynamic-form-approach
 
-1. We have the config and its type, which i feel is good.
-2. But we have to create the formGroup everytime we will create the dynamic form, which we can move the logic to formService, which is fine.
+1. We have the config and its type.
+2. But we have to create the formGroup and register control everytime, which we can move the logic to formService.
 3. But we have to do ngSwitchCase in the template, which we can move to one html file and we can use that file in every component template, but if take a look carefully, HTML part is exactly the design bottleneck where we create controls based on its type.
 4. In future we might have 20 type of controls, we can’t put all 20 switch blocks, we will be violating Single Responsibility Principle and Open/Closed Principle.
 5. My Idea is to extract each control into its own separate component and create those components dynamically using ngComponentOutlet.
