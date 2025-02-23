@@ -1,10 +1,33 @@
 <ng-container [formGroup]="form">
-  <div class="form-field form-field--checkbox">
-    <input
-      type="checkbox"
-      [id]="controlConfig.name"
-      [formControlName]="controlConfig.name"
-    />
-    <label [for]="controlConfig.name">{{ controlConfig.label }}</label>
-  </div>
+  <fieldset>
+    <legend>{{controlConfig.label}}</legend>
+    <ng-container [formGroupName]="controlConfig.name">
+      <ng-container *ngFor="let control of controlConfig.controls | keyvalue">
+        <ng-container
+          [ngComponentOutlet]="
+            dynamicComponentResolver.resolve(control.value.controlType)
+          "
+          [ngComponentOutletInjector]="control.value | controlConfigInjector"
+        >
+        </ng-container>
+        <!-- Error message looks bad right now :( -->
+        <ng-container
+          *ngIf="
+            form.get(control.value.name)?.touched &&
+            form.get(control.value.name)?.hasError('required')
+          "
+        >
+          <p class="input-error">{{ control.value.label }} is required</p>
+        </ng-container>
+        <ng-container
+          *ngIf="
+            form.get(control.value.name)?.touched &&
+            form.get(control.value.name)?.hasError('email')
+          "
+        >
+          <p class="input-error">{{ control.value.label }} should be valid</p>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </fieldset>
 </ng-container>

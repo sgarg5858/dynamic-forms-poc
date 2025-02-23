@@ -1,4 +1,5 @@
 import { ValidatorFn } from '@angular/forms';
+import { DynamicFormConfig } from './dynamic-form-config';
 
 export interface DynamicOption<T = string > {
   label: string;
@@ -13,4 +14,5 @@ export interface DynamicControl<T = string | boolean | number > {
   type?: string;
   options?: DynamicOption<T>[];
   validators?: ValidatorFn[];
+  controls?:DynamicFormConfig;
 }
