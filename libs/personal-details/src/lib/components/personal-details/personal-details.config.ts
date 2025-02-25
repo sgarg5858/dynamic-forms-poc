@@ -1,7 +1,7 @@
 import { Validators } from '@angular/forms';
 import { DynamicFormConfig } from '@dynamic-forms-poc/infrastructure/interfaces';
 
-export const PersonalDetailsFormConfig: ()=> DynamicFormConfig = () => ({
+export const PersonalDetailsFormConfig: () => DynamicFormConfig = () => ({
   firstName: {
     name: 'firstName',
     controlType: 'input',
@@ -24,7 +24,7 @@ export const PersonalDetailsFormConfig: ()=> DynamicFormConfig = () => ({
     type: 'email',
     defaultValue: '',
     label: 'Email',
-    validators: [Validators.required,Validators.email],
+    validators: [Validators.required, Validators.email],
   },
   phoneNumber: {
     name: 'phoneNumber',
@@ -48,18 +48,42 @@ export const PersonalDetailsFormConfig: ()=> DynamicFormConfig = () => ({
       { value: 'american', label: 'American' },
       { value: 'australian', label: 'Australian' },
     ],
-    validators: [
-      Validators.required,
-    ],
+    validators: [Validators.required],
   },
   sponsorshipRequired: {
     name: 'sponsorshipRequired',
     controlType: 'checkbox',
     defaultValue: false,
     label: 'Will you require sponsorship?',
-    validators: [
-      Validators.requiredTrue,
-    ],
+    validators: [Validators.requiredTrue],
+  },
+  address: {
+    name: 'address',
+    controlType: 'group',
+    label: 'Your Address',
+    defaultValue: null,
+    controls: {
+      postCode: {
+        name: 'postCode',
+        controlType: 'input',
+        type: 'text',
+        defaultValue: '',
+        label: 'Post Code',
+        validators: [Validators.required],
+      },
+      country: {
+        name: 'country',
+        controlType: 'select',
+        defaultValue: '',
+        label: 'Country',
+        validators: [Validators.required],
+        options: [
+          { value: 'indian', label: 'Indian' },
+          { value: 'american', label: 'American' },
+          { value: 'australian', label: 'Australian' },
+          { value: 'unitedKingdom', label: ' United Kingdom ' },
+        ],
+      },
+    },
   },
 });
-

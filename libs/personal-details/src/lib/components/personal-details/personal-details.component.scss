@@ -9,7 +9,7 @@
   .card{
     margin-top: 50px;
     width: 300px;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 50px;
     display: flex;
@@ -27,9 +27,13 @@
     width: 100%;
     margin-top: 20px;
     display: flex;
+    border-radius: 8px;
     flex-direction: column;
     &--checkbox{
         flex-direction: row;
+        input{
+          margin-right: 10px;
+        }
     }
   }
   input:not([type='checkbox']),select{
