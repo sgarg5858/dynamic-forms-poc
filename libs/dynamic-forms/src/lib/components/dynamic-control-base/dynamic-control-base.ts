@@ -1,6 +1,11 @@
-import { Directive, inject, Provider } from '@angular/core';
+import { Directive, inject, OnInit, Provider } from '@angular/core';
 import { CONTROL_CONFIG } from '../../token/control-config.token';
-import { ControlContainer } from '@angular/forms';
+import {
+  AbstractControl,
+  ControlContainer,
+  FormControl,
+  FormGroup,
+} from '@angular/forms';
 
 export const dynamicParentControlContainerProvider: Provider = {
   provide: ControlContainer,
@@ -8,7 +13,20 @@ export const dynamicParentControlContainerProvider: Provider = {
 };
 
 @Directive()
-export class DynamicControlBase {
+export class DynamicControlBase implements OnInit {
   controlConfig = inject(CONTROL_CONFIG);
-  //Definitely not a good approach
+
+  parentGroupDirective = inject(ControlContainer);
+
+  formControl: AbstractControl = new FormControl(
+    this.controlConfig.defaultValue,
+    { validators: this.controlConfig.validators }
+  );
+
+  ngOnInit(): void {
+    (this.parentGroupDirective.control as FormGroup).addControl(
+      this.controlConfig.name,
+      this.formControl
+    );
+  }
 }
