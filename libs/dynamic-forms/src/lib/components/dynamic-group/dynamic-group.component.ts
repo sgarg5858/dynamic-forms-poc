@@ -1,20 +1,18 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { DynamicControlBase, dynamicParentControlContainerProvider } from '../dynamic-control-base/dynamic-control-base';
+import { Component, inject } from '@angular/core';
+import {
+  DynamicControlBase,
+  dynamicParentControlContainerProvider,
+} from '../dynamic-control-base/dynamic-control-base';
 import { DynamicComponentResolver } from '../../services/dynamic-component-resolver.service';
+import { AbstractControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'dynamic-forms-poc-dynamic-checkbox',
   templateUrl: './dynamic-group.component.html',
   styleUrls: ['./dynamic-group.component.scss'],
-  viewProviders:[dynamicParentControlContainerProvider]
-  
+  viewProviders: [dynamicParentControlContainerProvider],
 })
-export class DynamicGroupComponent
-  extends DynamicControlBase
-  implements OnInit
-{
+export class DynamicGroupComponent extends DynamicControlBase {
+  override formControl: AbstractControl = new FormGroup({});
   dynamicComponentResolver = inject(DynamicComponentResolver);
-  ngOnInit(): void {
-    console.log(this.controlConfig);
-  }
 }

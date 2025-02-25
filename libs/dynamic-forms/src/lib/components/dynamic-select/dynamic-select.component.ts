@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DynamicControlBase, dynamicParentControlContainerProvider } from '../dynamic-control-base/dynamic-control-base';
 
 @Component({
@@ -7,9 +7,7 @@ import { DynamicControlBase, dynamicParentControlContainerProvider } from '../dy
   styleUrls: ['./dynamic-select.component.scss'],
   viewProviders:[dynamicParentControlContainerProvider]
 })
-export class DynamicSelectComponent extends DynamicControlBase implements OnInit {
+export class DynamicSelectComponent extends DynamicControlBase{
 
-  ngOnInit(): void {
-    console.log(this.controlConfig);
-  }
+ 
 }
