@@ -7,7 +7,7 @@ import { DynamicComponentResolver } from '../../services/dynamic-component-resol
 import { AbstractControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'dynamic-forms-poc-dynamic-checkbox',
+  selector: 'dynamic-forms-poc-dynamic-group',
   templateUrl: './dynamic-group.component.html',
   styleUrls: ['./dynamic-group.component.scss'],
   viewProviders: [dynamicParentControlContainerProvider],
