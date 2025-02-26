@@ -8,22 +8,6 @@
       [ngComponentOutletInjector]="control.value | controlConfigInjector"
     >
     </ng-container>
-    <!-- Error message looks bad right now :( -->
-    <!-- <ng-container
-      *ngIf="
-        form.get(control.value.name)?.touched &&
-        form.get(control.value.name)?.hasError('required')
-      "
-    >
-      <p class="input-error">{{ control.value.label }} is required</p>
-    </ng-container>
-    <ng-container
-      *ngIf="
-        form.get(control.value.name)?.touched &&
-        form.get(control.value.name)?.hasError('email')
-      "
-    >
-      <p class="input-error">{{ control.value.label }} should be valid</p>
-    </ng-container> -->
+    
   </ng-container>
 </fieldset>
