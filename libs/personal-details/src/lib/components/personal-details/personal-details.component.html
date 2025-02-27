@@ -13,10 +13,6 @@
             [ngComponentOutletInjector]="control.value | controlConfigInjector"
           >
           </ng-container>
-          <dynamic-forms-poc-control-error
-            *ngIf="form.get(control.key)?.touched"
-            [errors]="form.get(control.value.name)?.errors"
-          ></dynamic-forms-poc-control-error>
           <!-- Error message looks bad right now :( -->
         </ng-container>
         <button type="submit" [disabled]="!form.valid">Submit</button>
