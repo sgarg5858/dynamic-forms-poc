@@ -1,6 +1,7 @@
 <ng-container *ngIf="errors">
   <div
     class="control-error"
+    aria-live="polite"
     *ngFor="let error of errors | keyvalue; trackBy: trackByFn"
   >
     {{ error.key | errorMessage : error.value }}
