@@ -4,6 +4,7 @@ import {
   Directive,
   ElementRef,
   inject,
+  Input,
   OnDestroy,
   OnInit,
   ViewContainerRef,
@@ -37,7 +38,7 @@ export class TrackAndShowErrorDirective implements OnInit, OnDestroy {
   elementRef = inject(ElementRef);
   private viewContainerRef = inject(ViewContainerRef);
   changeDetector = inject(ChangeDetectorRef);
-  errorStateMatcher = inject(ErrorStateMatcher);
+  @Input() errorStateMatcher = inject(ErrorStateMatcher);
 
   subscriptions = new Subscription();
   private componentRef: ComponentRef<ControlErrorComponent> | null = null;
