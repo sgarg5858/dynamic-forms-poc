@@ -7,7 +7,7 @@
 4. In future we might have 20 type of controls, we can’t put all 20 switch blocks, we will be violating Single Responsibility Principle and Open/Closed Principle.
 5. My Idea is to extract each control into its own separate component and create those components dynamically using ngComponentOutlet.
 
-# 2. Bits about this: https://github.com/sgarg5858/dynamic-forms-poc/tree/2-dynamic-forms-without-nested-group-array-support
+# 2. Bits about this: [2-dynamic-forms-without-nested-group-array-support](https://github.com/sgarg5858/dynamic-forms-poc/tree/2-dynamic-forms-without-nested-group-array-support)
 
 1. We have solved one problem by moving dynamic controls to their dedicated components, and resolving those compnonents via resolverService which helps in
    introducing new controls with ease, also less repititive work.
@@ -21,6 +21,10 @@
 1. FormGroup works fine now in our dynamic approach.
 2. But we have to use formGroup wrapper in every dynamic component, which i would like to remove and use more better approach.
 3. We will use viewProviders to resolve parent formGroup/formGroupName , as formControlName  resolves the provider for ControlContainer using @Host, so it should find a provider in the same view, providers will not work, as @Host decorator.
+
+# 4. Bits about [8-updating-error-messages-dynamically](https://github.com/sgarg5858/dynamic-forms-poc/tree/8-updating-error-messages-dynamically)
+
+1. Currently we ard hard-coding the logic of error messages in the directive, we can make that configurable.
 
 
 
