@@ -1,5 +1,5 @@
 #
- # 1. Problems with https://github.com/sgarg5858/dynamic-forms-poc/tree/1-basic-dynamic-form-approach
+ # 1. Problems with [1-basic-dynamic-form-approach](https://github.com/sgarg5858/dynamic-forms-poc/tree/1-basic-dynamic-form-approach)
 
 1. We have the config and its type.
 2. But we have to create the formGroup and register control everytime, which we can move the logic to formService.
