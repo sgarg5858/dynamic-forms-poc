@@ -25,6 +25,7 @@ import {
   Subscription,
 } from 'rxjs';
 import { ControlErrorComponent } from '../components/control-error/control-error.component';
+import { ErrorStateMatcher } from '../error-state-matcher/error-state-matcher';
 
 @Directive({
   // eslint-disable-next-line @angular-eslint/directive-selector
@@ -32,20 +33,20 @@ import { ControlErrorComponent } from '../components/control-error/control-error
 })
 export class TrackAndShowErrorDirective implements OnInit, OnDestroy {
   private ngControl = inject(NgControl, { self: true });
+  parentContainer = inject(ControlContainer, { optional: true });
   elementRef = inject(ElementRef);
   private viewContainerRef = inject(ViewContainerRef);
-  private componentRef: ComponentRef<ControlErrorComponent> | null = null;
   changeDetector = inject(ChangeDetectorRef);
+  errorStateMatcher = inject(ErrorStateMatcher);
 
-  parentContainer = inject(ControlContainer, { optional: true });
+  subscriptions = new Subscription();
+  private componentRef: ComponentRef<ControlErrorComponent> | null = null;
   get form() {
     return this.parentContainer?.formDirective as
       | NgForm
       | FormGroupDirective
       | null;
   }
-
-  subscriptions = new Subscription();
 
   ngOnInit(): void {
     if (!this.ngControl?.control) {
@@ -71,7 +72,12 @@ export class TrackAndShowErrorDirective implements OnInit, OnDestroy {
         .subscribe(() => {
           console.log(this.ngControl.errors);
           // here we are hard coding when to update the error messages, we can make this configurable
-          if (this.ngControl.errors && (this.ngControl.touched || this.form?.submitted)) {
+          if (
+            this.errorStateMatcher.isErrorVisible(
+              this.ngControl.control,
+              this.form
+            )
+          ) {
             if (!this.componentRef) {
               this.componentRef = this.viewContainerRef.createComponent(
                 ControlErrorComponent
