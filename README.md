@@ -26,6 +26,10 @@
 
 1. Currently we ard hard-coding the logic of error messages in the directive, we can make that configurable.
 
+ # 5. Bits about [9-configurable-error-state-matcher](https://github.com/sgarg5858/dynamic-forms-poc/tree/9-configurable-error-state-matcher)
+
+1. Implemented Configurable ErrorStateMatcher to configure the logic for rendering errors
+
 
 
 
