@@ -29,11 +29,14 @@ import { ControlErrorComponent } from '../components/control-error/control-error
 import { ErrorStateMatcher } from '../error-state-matcher/error-state-matcher';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[ngModel],[formControl],[formControlName]',
+  selector:
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    '[ngModel],[formControl],[formControlName],[formGroupName],[ngModelGroup]',
 })
 export class TrackAndShowErrorDirective implements OnInit, OnDestroy {
-  private ngControl = inject(NgControl, { self: true });
+  private ngControl =
+    inject(NgControl, { self: true, optional: true }) ||
+    inject(ControlContainer, { self: true });
   parentContainer = inject(ControlContainer, { optional: true });
   elementRef = inject(ElementRef);
   private viewContainerRef = inject(ViewContainerRef);
